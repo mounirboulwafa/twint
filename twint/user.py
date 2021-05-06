@@ -26,28 +26,28 @@ def User(ur):
     _usr.id = ur['data']['user']['rest_id']
     try:
         _usr.name = ur['data']['user']['legacy']['name']
-	except:
+    except:
 		_usr.name = ''
 	
     try:
 		_usr.username = ur['data']['user']['legacy']['screen_name']
-	except:
+    except:
 		_usr.username = ''
 	
     try:
 		_usr.bio = ur['data']['user']['legacy']['description']
-	except:
+    except:
 		_usr.bio = ''
 	
     try:
 		_usr.location = ur['data']['user']['legacy']['location']
-	except:
+    except:
 		_usr.location = ''
 	
     try: 
 		_usr.url = ur['data']['user']['legacy']['url']
-	except:
-		_usr.url = ''
+    except:
+        _usr.url = ''
 	
     # parsing date to user-friendly format
     _dt = ur['data']['user']['legacy']['created_at']
