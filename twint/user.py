@@ -23,26 +23,28 @@ def User(ur):
         logme.fatal(msg)
         raise KeyError(msg)
     _usr = user()
-	
-	_usr.id = ur['data']['user']['rest_id']
-	
-	try:
-    _usr.name = ur['data']['user']['legacy']['name']
+    _usr.id = ur['data']['user']['rest_id']
+    try:
+        _usr.name = ur['data']['user']['legacy']['name']
 	except:
 		_usr.name = ''
-	try:
+	
+    try:
 		_usr.username = ur['data']['user']['legacy']['screen_name']
 	except:
 		_usr.username = ''
-	try:
+	
+    try:
 		_usr.bio = ur['data']['user']['legacy']['description']
 	except:
 		_usr.bio = ''
-	try:
+	
+    try:
 		_usr.location = ur['data']['user']['legacy']['location']
 	except:
 		_usr.location = ''
-	try: 
+	
+    try: 
 		_usr.url = ur['data']['user']['legacy']['url']
 	except:
 		_usr.url = ''
